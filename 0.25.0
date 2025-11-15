@@ -1,0 +1,7 @@
+Found existing installation: diffusers 0.36.0.dev0
+Uninstalling diffusers-0.36.0.dev0:
+  Would remove:
+    d:\cpg-image-creation\venv\lib\site-packages\diffusers-0.36.0.dev0.dist-info\*
+    d:\cpg-image-creation\venv\lib\site-packages\diffusers\*
+    d:\cpg-image-creation\venv\scripts\diffusers-cli.exe
+Proceed (Y/n)? 

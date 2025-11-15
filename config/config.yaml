@@ -1,0 +1,120 @@
+# CPG Image Generation Configuration
+
+# Method Selection
+method: "method1_controlnet"  # Options: method1_controlnet, method2_nanobanan
+
+# API Configuration
+api:
+  # Enable LLM for automatic prompt generation
+  use_llm_prompt_generation: true  # Set to false to use fallback prompts only
+  
+  # Require API key (fail if not found, don't use fallback)
+  require_api_key: true  # Set to false to allow fallback when key missing
+  
+  # API key location (loaded from .env file automatically)
+  # You can also override via command line: --api-key YOUR_KEY
+  api_key_env_var: "GEMINI_API_KEY"
+
+# Input/Output Paths
+paths:
+  input_dir: "input"
+  output_dir: "output"
+  temp_dir: "temp"
+  visualization_dir: "output/visualizations"
+
+# Image Processing
+image_processing:
+  heic_to_png: true
+  maintain_quality: true
+  max_dimension: 2048
+  output_format: "PNG"
+
+# Foreground Extraction (rembg)
+foreground_extraction:
+  model: "u2net"
+  alpha_matting: true
+  alpha_matting_foreground_threshold: 240
+  alpha_matting_background_threshold: 10
+  alpha_matting_erode_size: 10
+
+# Mask Processing
+mask_processing:
+  blur_amount: 5
+  feather_pixels: 3
+  expand_mask: 10
+
+# Prompt Enhancement
+prompt_enhancement:
+  enabled: true  # Use LLM to enhance user-provided prompts
+  use_smart_enhancer: true  # Use Gemini to make prompts better
+  model: "gemini-2.5-pro"
+  temperature: 0.7
+  
+# Product Description (for prompt building)
+product_defaults:
+  target_audience: "Gen-Z"
+  photography_style: "commercial, high-quality, Instagram-worthy"
+  lighting_preference: "natural, soft, professional"
+
+# Method 1: ControlNet Inpainting (Qwen-Image)
+controlnet:
+  model_name: "InstantX/Qwen-Image-ControlNet-Inpainting"
+  base_model: "Qwen/Qwen-Image"
+  num_inference_steps: 30
+  true_cfg_scale: 4.0
+  controlnet_conditioning_scale: 1.0
+  negative_prompt: "blurry, low quality, distorted, ugly, bad anatomy, deformed, watermark, text overlay"
+  
+  prompt_style: "descriptive"
+  include_product_in_prompt: true
+  include_lighting_details: true
+  include_mood_atmosphere: true
+
+# Method 2: Nano Banana (Gemini Image Generation)
+nano_banana:
+  model: "gemini-2.5-flash-image"
+  #imagen_model: "imagen-3.0-generate-001"
+  temperature: 0.9
+  creativity_level: "high"
+  aspect_ratio: "1:1"
+  safety_filter_level: "block_some"
+  
+  # Always use API for Method 2
+  require_api_key: true  # Method 2 MUST have API key
+  
+  background_only: true
+  exclude_text: true
+  exclude_foreground_objects: true
+  
+  enhance_background_prompts: true
+  style_keywords:
+    - "commercial photography background"
+    - "Instagram-worthy"
+    - "Gen-Z aesthetic"
+    - "vibrant and creative"
+    - "professional lighting"
+
+# Compositing
+compositing:
+  blend_mode: "normal"
+  edge_refinement: true
+  color_matching: true
+  shadow_generation: true
+  shadow_opacity: 0.3
+  shadow_blur: 15
+
+# Visualization
+visualization:
+  enabled: true
+  show_stages: true
+  save_intermediate: true
+  format: "jpg"
+  dpi: 150
+
+# GPU Settings
+gpu:
+  use_gpu: true
+  gpu_memory_limit: 0.9
+  enable_attention_slicing: true
+  enable_vae_slicing: true
+  clear_cache_between_generations: true

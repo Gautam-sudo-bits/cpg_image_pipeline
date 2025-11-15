@@ -1,0 +1,89 @@
+2025-11-13 06:53:40 - CPG_ImageGen - INFO - Using device: CUDA GPU: NVIDIA GeForce RTX 4070 Laptop GPU
+2025-11-13 06:53:41 - CPG_ImageGen - INFO - Logger imported successfully
+2025-11-13 06:53:41 - CPG_ImageGen - INFO - Importing methods...
+2025-11-13 06:53:41 - CPG_ImageGen - INFO - Importing Method1ControlNetInpaint...
+2025-11-13 06:53:41 - CPG_ImageGen - INFO -   - Importing ImageLoader...
+2025-11-13 06:53:41 - CPG_ImageGen - INFO -   - Importing ForegroundExtractor...
+2025-11-13 06:53:42 - CPG_ImageGen - INFO -   - Importing MaskProcessor...
+2025-11-13 06:53:42 - CPG_ImageGen - INFO -   - Importing CompositingEngine...
+2025-11-13 06:53:42 - CPG_ImageGen - INFO -   - Importing Visualizer...
+2025-11-13 06:53:42 - CPG_ImageGen - INFO -   [OK] All modules imported
+2025-11-13 06:53:42 - CPG_ImageGen - INFO -   - Importing NanoBananaAPI...
+2025-11-13 06:53:42 - CPG_ImageGen - INFO -   - Importing ControlNetHandler...
+2025-11-13 06:53:42 - CPG_ImageGen - INFO -   [OK] All models imported
+2025-11-13 06:53:42 - CPG_ImageGen - INFO - [OK] Method1ControlNetInpaint imported
+2025-11-13 06:53:42 - CPG_ImageGen - INFO - Importing Method2NanoBananaComposite...
+2025-11-13 06:53:42 - CPG_ImageGen - INFO - [OK] Method2NanoBananaComposite imported
+2025-11-13 06:53:42 - CPG_ImageGen - INFO - Methods imported successfully
+2025-11-13 06:53:42 - CPG_ImageGen - INFO - === CPG Image Generator Starting ===
+2025-11-13 06:53:42 - CPG_ImageGen - INFO - Starting main function...
+2025-11-13 06:53:42 - CPG_ImageGen - INFO - Arguments parsed: Namespace(input='input/soda_can.HEIC', prompt=None, product=None, method=None, style=None, color=None, output=None, config='config/config.yaml', api_key=None, variations=1, no_enhance=False)
+2025-11-13 06:53:42 - CPG_ImageGen - INFO - Loading configuration...
+2025-11-13 06:53:42 - CPG_ImageGen - INFO - Configuration loaded from config/config.yaml
+2025-11-13 06:53:42 - CPG_ImageGen - INFO - Setting up directories...
+2025-11-13 06:53:42 - CPG_ImageGen - INFO - Directories setup complete
+2025-11-13 06:53:42 - CPG_ImageGen - INFO - Input image: input/soda_can.HEIC
+2025-11-13 06:53:42 - CPG_ImageGen - INFO - Prompt: AUTO-GENERATE
+2025-11-13 06:53:42 - CPG_ImageGen - INFO - Product: AUTO-DETECT
+2025-11-13 06:53:42 - CPG_ImageGen - INFO - Method: method1_controlnet
+2025-11-13 06:53:42 - CPG_ImageGen - INFO -  Starting Method 1: Pure ControlNet Inpainting
+
+2025-11-13 06:53:42 - CPG_ImageGen - INFO - ============================================================
+2025-11-13 06:53:42 - CPG_ImageGen - INFO - Initializing Method 1: Pure ControlNet Inpainting
+2025-11-13 06:53:42 - CPG_ImageGen - INFO - ============================================================
+2025-11-13 06:53:42 - CPG_ImageGen - INFO - ImageLoader initialized with support for all major formats
+2025-11-13 06:53:42 - CPG_ImageGen - INFO - ForegroundExtractor initialized (model: u2net, will load on first use)
+2025-11-13 06:53:42 - CPG_ImageGen - INFO - MaskProcessor initialized
+2025-11-13 06:53:42 - CPG_ImageGen - INFO - Visualizer initialized. Output: output\visualizations
+2025-11-13 06:53:42 - CPG_ImageGen - INFO - ControlNetHandler initialized
+2025-11-13 06:53:42 - CPG_ImageGen - INFO - Base model: Qwen/Qwen-Image
+2025-11-13 06:53:42 - CPG_ImageGen - INFO - ControlNet: InstantX/Qwen-Image-ControlNet-Inpainting
+2025-11-13 06:53:42 - CPG_ImageGen - INFO - (Models will load on first use)
+2025-11-13 06:53:42 - CPG_ImageGen - WARNING - No Gemini API key for auto prompt generation
+2025-11-13 06:53:42 - CPG_ImageGen - WARNING - Will use creative fallback prompts
+2025-11-13 06:53:42 - CPG_ImageGen - WARNING - No Gemini API key for prompt enhancement
+2025-11-13 06:53:42 - CPG_ImageGen - INFO - Smart Prompt Enhancer enabled
+2025-11-13 06:53:42 - CPG_ImageGen - INFO - Method 1 initialized successfully
+2025-11-13 06:53:42 - CPG_ImageGen - INFO - Starting Method 1 generation for: input/soda_can.HEIC
+2025-11-13 06:53:42 - CPG_ImageGen - INFO - [Stage 1/6] Loading image...
+2025-11-13 06:53:42 - CPG_ImageGen - INFO - Loading image: soda_can.HEIC (.heic)
+2025-11-13 06:53:42 - CPG_ImageGen - DEBUG - Original image mode: RGB
+2025-11-13 06:53:42 - CPG_ImageGen - INFO - Resizing from 3024x4032 to 1536x2048
+2025-11-13 06:53:42 - CPG_ImageGen - INFO - [Stage 2/6] Extracting foreground...
+2025-11-13 06:53:42 - CPG_ImageGen - INFO - ============================================================
+2025-11-13 06:53:42 - CPG_ImageGen - INFO - Initializing rembg (Background Removal)
+2025-11-13 06:53:42 - CPG_ImageGen - INFO - ============================================================
+2025-11-13 06:53:42 - CPG_ImageGen - INFO - Model: u2net
+2025-11-13 06:53:42 - CPG_ImageGen - INFO - Downloading model on first run (this may take a few minutes)...
+2025-11-13 06:53:42 - CPG_ImageGen - INFO - Model will be cached at: ~/.u2net/
+2025-11-13 06:53:43 - CPG_ImageGen - INFO - ============================================================
+2025-11-13 06:53:43 - CPG_ImageGen - INFO - rembg initialized successfully!
+2025-11-13 06:53:43 - CPG_ImageGen - INFO - ============================================================
+2025-11-13 06:53:43 - CPG_ImageGen - INFO - Extracting foreground from image...
+2025-11-13 06:53:43 - CPG_ImageGen - DEBUG - Using alpha matting for better edge quality
+2025-11-13 06:53:45 - CPG_ImageGen - INFO - Foreground extraction complete
+2025-11-13 06:53:45 - CPG_ImageGen - INFO - [Stage 3/6] Processing mask...
+2025-11-13 06:53:45 - CPG_ImageGen - INFO - Processing mask for: for_inpainting
+2025-11-13 06:53:45 - CPG_ImageGen - DEBUG - Mask expanded by 10 pixels
+2025-11-13 06:53:45 - CPG_ImageGen - DEBUG - Mask feathered by 3 pixels
+2025-11-13 06:53:45 - CPG_ImageGen - DEBUG - Inpainting mask prepared
+2025-11-13 06:53:45 - CPG_ImageGen - INFO - [Stage 4/6] Auto-generating creative prompt...
+2025-11-13 06:53:45 - CPG_ImageGen - WARNING - No Gemini model available, using creative fallback
+2025-11-13 06:53:45 - CPG_ImageGen - INFO - Using creative fallback prompts
+2025-11-13 06:53:45 - CPG_ImageGen - INFO - No prompt provided - using auto-generated prompt
+2025-11-13 06:53:45 - CPG_ImageGen - INFO - Final prompt: This photo showcases vibrant packaged consumer product. The product is clearly highlighted and prominently displayed, placed in futuristic scene with neon glow and reflective surfaces. The overall image maintains a clean, professional, commercial visual style, with professional commercial photography lighting.
+2025-11-13 06:53:45 - CPG_ImageGen - INFO - [Stage 5/6] Inpainting background with ControlNet...
+2025-11-13 06:53:45 - CPG_ImageGen - INFO - Loading Qwen-Image ControlNet Pipeline
+2025-11-13 06:53:45 - CPG_ImageGen - INFO - This will download ~35GB on first run...
+2025-11-13 06:53:45 - CPG_ImageGen - INFO - Models cached at: ~/.cache/huggingface/hub/
+2025-11-13 06:53:45 - CPG_ImageGen - INFO - Using SEQUENTIAL downloads for maximum speed...
+2025-11-13 06:53:45 - CPG_ImageGen - INFO - Using torch.float16 for GPU
+2025-11-13 06:53:45 - CPG_ImageGen - INFO - [1/3] Importing diffusers classes...
+2025-11-13 06:53:48 - CPG_ImageGen - INFO -   [OK] Classes imported
+2025-11-13 06:53:48 - CPG_ImageGen - INFO - [2/3] Loading ControlNet: InstantX/Qwen-Image-ControlNet-Inpainting
+2025-11-13 06:53:48 - CPG_ImageGen - INFO - Downloading ControlNet model (4.23GB)...
+2025-11-13 06:53:54 - CPG_ImageGen - INFO -   [OK] ControlNet loaded
+2025-11-13 06:53:54 - CPG_ImageGen - INFO - [3/3] Loading pipeline: Qwen/Qwen-Image
+2025-11-13 06:53:54 - CPG_ImageGen - INFO - Downloading Qwen-Image base model (~35GB total)...
+2025-11-13 06:53:54 - CPG_ImageGen - INFO - This may take 10-30 minutes depending on your connection...
+2025-11-13 06:53:54 - CPG_ImageGen - INFO - Files will download ONE AT A TIME for maximum speed.

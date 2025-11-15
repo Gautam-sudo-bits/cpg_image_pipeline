@@ -1,0 +1,45 @@
+# Style Presets for Background Generation
+
+presets:
+  minimal_gradient:
+    description: "Clean gradient background for professional look"
+    prompt: "smooth gradient background, minimal, professional, clean aesthetic, studio lighting"
+    negative_prompt: "cluttered, busy, patterns, textures"
+    
+  vibrant_genz:
+    description: "Bold, colorful backgrounds for Gen-Z appeal"
+    prompt: "vibrant colors, bold geometric shapes, trendy aesthetic, Instagram-worthy, dynamic composition, energetic vibe"
+    negative_prompt: "dull, boring, corporate, traditional"
+  
+  neon_cyberpunk:
+    description: "Futuristic neon aesthetics"
+    prompt: "neon lights, cyberpunk aesthetic, futuristic, glowing elements, dark background with bright accents"
+    negative_prompt: "vintage, rustic, natural"
+  
+  natural_organic:
+    description: "Earthy, organic backgrounds"
+    prompt: "natural textures, organic elements, botanical, earthy tones, soft lighting"
+    negative_prompt: "artificial, synthetic, neon, harsh"
+  
+  studio_professional:
+    description: "Classic product photography studio setup"
+    prompt: "professional studio lighting, clean white background, subtle shadows, commercial photography"
+    negative_prompt: "outdoor, messy, unprofessional"
+  
+  abstract_artistic:
+    description: "Creative abstract backgrounds"
+    prompt: "abstract art, creative composition, artistic blur, bokeh effect, colorful abstract shapes"
+    negative_prompt: "realistic, plain, simple"
+  
+  summer_beach:
+    description: "Fresh summer vibes"
+    prompt: "summer aesthetic, beach vibes, bright and airy, tropical colors, refreshing atmosphere"
+    negative_prompt: "winter, dark, cold tones"
+  
+  urban_street:
+    description: "Urban street culture aesthetic"
+    prompt: "urban setting, street culture, modern city vibes, graffiti art, contemporary aesthetic"
+    negative_prompt: "rural, countryside, vintage"
+
+# Default preset
+default_preset: "vibrant_genz"

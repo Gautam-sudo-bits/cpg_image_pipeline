@@ -1,0 +1,82 @@
+# ============================================================================
+# CPG Image Generation - Requirements
+# ============================================================================
+
+# NOTE: Install PyTorch FIRST with GPU support before other packages
+# For CUDA 11.8:
+#   pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+# For CUDA 12.1:
+#   pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+
+# ============================================================================
+# Core Image Processing
+# ============================================================================
+pillow>=10.0.0
+pillow-heif>=0.13.0
+numpy>=1.24.0,<2.0.0
+opencv-python>=4.8.0.76
+scipy>=1.11.0
+psutil>=5.9.0
+# ============================================================================
+# Configuration & Utilities
+# ============================================================================
+pyyaml>=6.0.1
+tqdm>=4.66.0
+requests>=2.31.0
+python-dotenv>=1.0.0
+# ============================================================================
+# Background Removal (rembg) & Dependencies
+# ============================================================================
+onnxruntime-gpu>=1.16.0  # For GPU, or use onnxruntime for CPU
+rembg>=2.0.50
+
+# ============================================================================
+# Diffusion Models & ControlNet (Qwen-Image)
+# ============================================================================
+# CRITICAL: Version constraints to avoid conflicts
+huggingface-hub>=0.34.0,<1.0  # transformers requires <1.0
+transformers>=4.36.0
+accelerate>=0.25.0
+safetensors>=0.4.1
+
+# Install latest diffusers from GitHub for Qwen-Image support
+git+https://github.com/huggingface/diffusers.git
+
+# ============================================================================
+# Gemini API (Nano Banana)
+# ============================================================================
+google-generativeai>=0.3.2
+
+# ============================================================================
+# Visualization
+# ============================================================================
+matplotlib>=3.7.0
+imageio>=2.31.0
+
+# ============================================================================
+# Optional but recommended for GPU
+# ============================================================================
+# xformers>=0.0.23  # Uncomment if needed, install with: pip install xformers
+
+# ============================================================================
+# INSTALLATION INSTRUCTIONS
+# ============================================================================
+# 
+# 1. Create virtual environment:
+#    python -m venv venv
+#    venv\Scripts\activate  # Windows
+#
+# 2. Install PyTorch with GPU support:
+#    pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+#
+# 3. Install onnxruntime-gpu:
+#    pip install onnxruntime-gpu
+#
+# 4. Install remaining requirements:
+#    pip install -r requirements.txt
+#
+# 5. Verify:
+#    python -c "import torch; print(f'CUDA: {torch.cuda.is_available()}')"
+#    python -c "from diffusers import QwenImageControlNetModel; print('Qwen OK')"
+#
+# ============================================================================
